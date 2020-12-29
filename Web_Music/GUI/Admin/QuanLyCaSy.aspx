@@ -11,7 +11,7 @@
     </div>
     <br />
     <br />
-    <asp:GridView ID="dgvcasy" AllowPaging="True" PageSize="10" runat="server" AutoGenerateColumns="False" CellPadding="5" ForeColor="#333333" GridLines="None" Width="1000px"  HorizontalAlign="Center" Font-Size="18px" OnPageIndexChanging="dgvcasy_PageIndexChanging" >
+    <asp:GridView ID="dgvcasy" AllowPaging="True" PageSize="20" runat="server" AutoGenerateColumns="False" CellPadding="5" ForeColor="#333333" GridLines="None" Width="1000px"  HorizontalAlign="Center" Font-Size="18px" OnPageIndexChanging="dgvcasy_PageIndexChanging" >
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField HeaderText="ID" DataField="ID" />

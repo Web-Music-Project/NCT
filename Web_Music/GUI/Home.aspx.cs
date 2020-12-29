@@ -25,10 +25,14 @@ namespace Web_Music.GUI
             //Lấy các bài hát trong album mới phát hành gán vào dt2
             dt2 = bus_Multitable.GetDataByAlbumName("Nghe gì hôm nay");
 
-            //Lấy các bài hát trong album Việt Nam Top 10 gắn vào dt3
+            //Lấy các bài hát trong album Việt Nam Top 10 gán vào dt3
             dt3 = bus_Multitable.GetDataByAlbumId(23);
 
-            //Lấy các bài hát trong album 
+            //Lấy các bài hát trong album Âu Mỹ Top 10 gán vào dt4
+            dt4 = bus_Multitable.GetDataByAlbumId(24);
+
+            //Lấy các bài hát trong album Top 5 gán vào dt5
+            dt5 = bus_Multitable.GetDataByAlbumId(25);
         }
     }
 }

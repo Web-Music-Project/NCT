@@ -9,28 +9,42 @@
 		<div id="content">
 				<div id="hot-album">
 					<div id="abc">
-						<a href="#" id="slider1">
-							<img src="https://avatar-nct.nixcdn.com/slideshow/2020/10/26/5/5/4/1/1603706636633_org.jpg" alt="" width="750px">
+
+						<% for (int i = 0; i < dt5.Rows.Count; i++)
+                            { %>
+								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt5.Rows[i]["ID"].ToString() %>" id="slider<% =i+1 %>">
+                                    <img src="../../Image/Cover_vuong/<% =dt5.Rows[i]["Thumbnail"].ToString() %>" width="750" />
+								</a>
+						<%} %>
+
+						<%--<a href="#" id="slider1">
+							<img src="https://avatar-nct.nixcdn.com/slideshow/2020/10/23/9/3/4/9/1603425495964_org.jpg" alt="" width="750">
 						</a>
 						<a href="#" id="slider2">
-							<img src="https://avatar-ex-swe.nixcdn.com/slideshow/2020/12/03/6/8/0/a/1606968672313_org.jpg" alt="" width="750px">
+							<img src="https://avatar-ex-swe.nixcdn.com/slideshow/2020/12/03/6/8/0/a/1606968672313_org.jpg" alt="" width="750">
 						</a>
 						<a href="#" id="slider3">
-							<img src="https://avatar-ex-swe.nixcdn.com/slideshow/2020/11/30/7/8/e/c/1606712738977_org.jpg" alt="" width="750px">
+							<img src="https://avatar-ex-swe.nixcdn.com/slideshow/2020/11/30/7/8/e/c/1606712738977_org.jpg" alt="" width="750">
 						</a>
 						<a href="#" id="slider4">
-							<img src="https://avatar-ex-swe.nixcdn.com/slideshow/2020/11/30/7/8/e/c/1606710663224_org.jpg" alt="" width="750px">
+							<img src="https://avatar-ex-swe.nixcdn.com/slideshow/2020/11/30/7/8/e/c/1606710663224_org.jpg" alt="" width="750">
 						</a>
 						<a href="#" id="slider5">
-							<img src="https://avatar-ex-swe.nixcdn.com/slideshow/2020/11/30/7/8/e/c/1606711496335_org.jpg" alt="" width="750px">
-						</a>
+							<img src="https://avatar-ex-swe.nixcdn.com/slideshow/2020/11/30/7/8/e/c/1606711496335_org.jpg" alt="" width="750">
+						</a>--%>
 					</div>
 					<ul>
-						<li id="child1"><a href="#"><img src="https://avatar-nct.nixcdn.com/slideshow/2020/10/23/9/3/4/9/1603425495964_org.jpg" alt="dsds"  ></a></li>
+
+						<% for (int i = 0; i < dt5.Rows.Count; i++)
+                            { %>
+								<li id="child<% =i+1 %>"><a href="ChiTietBaiHat.aspx?Song_ID=<% =dt5.Rows[i]["ID"].ToString() %>"><img src="../../Image/Cover_vuong/<% =dt5.Rows[i]["Thumbnail"].ToString() %>"/></a></li>
+						<%} %>
+
+						<%--<li id="child1"><a href="#"><img src="https://avatar-nct.nixcdn.com/slideshow/2020/10/23/9/3/4/9/1603425495964_org.jpg" alt="dsds"  ></a></li>
 						<li id="child2"><a href="#"><img src="https://avatar-nct.nixcdn.com/slideshow/2020/10/23/9/3/4/9/1603448821599_org.jpg" alt="dsd" ></a></li>
 						<li id="child3"><a href="#"><img src="https://avatar-nct.nixcdn.com/slideshow/2020/10/19/0/7/f/8/1603096833321_org.jpg" alt="dsd"  ></a></li>
 						<li id="child4"><a href="#"><img src="https://avatar-nct.nixcdn.com/slideshow/2020/10/20/6/b/4/f/1603175823944_org.jpg" alt="dsd"  ></a></li>
-						<li id="child5"><a href="#"><img src="https://avatar-nct.nixcdn.com/slideshow/2020/10/26/5/5/4/1/1603706636633_org.jpg" alt="dsd" ></a></li>
+						<li id="child5"><a href="#"><img src="https://avatar-nct.nixcdn.com/slideshow/2020/10/26/5/5/4/1/1603706636633_org.jpg" alt="dsd" ></a></li>--%>
 
 					</ul>
 				</div>
@@ -549,8 +563,22 @@
                             
                         </ul>--%>
                 </div>
-                <div class="list_chart_music" id="top20-au-my" style="display: none;">     
-                        <ul>
+                <div class="list_chart_music" id="top20-au-my" style="display: none;">    
+					
+                    <ul>
+                         <% for (int i = 0; i < dt3.Rows.Count; i++)
+                           {%>
+								<li>
+									<span><% =i+1%></span>
+                                    <div>
+                                        <a href="ChiTietBaiHat.aspx?Song_ID=<% =dt4.Rows[i]["ID"].ToString() %>" style="color:#000000CC;"><h3><% =dt4.Rows[i]["Name"].ToString() %></h3></a>
+                                        <a href="ChiTietCaSy.aspx?Singer_ID=<% =dt4.Rows[i]["ID3"].ToString() %>" style="color:#000000CC;"><h5><% =dt4.Rows[i]["Name2"].ToString() %></h5></a>
+                                    </div>
+								</li>
+						<%} %>
+                    </ul>
+
+                        <%--<ul>
                              <li>
                              	<span>1</span>
                              	<div>
@@ -622,7 +650,7 @@
                              	</div>
                              </li>
                             
-                        </ul>
+                        </ul>--%>
                 </div>
                 <div class="list_chart_music" id="top20-han-quoc"  style="display: none;">     
                         <ul>
