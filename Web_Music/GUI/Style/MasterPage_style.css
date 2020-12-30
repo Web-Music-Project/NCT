@@ -932,3 +932,30 @@ header {
 .trending .trending-item:first-child {
 	display: block;
 }
+#sub
+{
+	box-shadow: 0px 5px 20px;
+}
+	#sub > div > a {
+		font-size: 20px;
+		margin-bottom: 10px;
+		display: block;
+		color: black;
+		font-weight:bold;
+	}
+#sub > div
+{
+	flex-grow:1;
+	color:black;
+	margin-left:20px;
+	padding-top:20px;
+}
+#sub > div > ul > li > a
+{
+	display:inline-block;
+	line-height:25px;
+	color:black;
+}
+	#sub div a:hover {
+		color: #35ADEE;
+	}

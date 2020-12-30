@@ -31,7 +31,45 @@
 			    </h1>
 			<ul>
 				<li><a href="#">Bài Hát</a></li>
-				<li><a href="#">Play list</a></li>
+				<li style="position:relative;">
+                    <a href="#">Album</a>
+                    <div id="sub" style="position:absolute;display:flex;background-color:white;width:500px;top50px;height:300px;">
+                         <div>
+                            <a href="#">Việt Nam</a>
+                            <ul>
+                            <li><a href="#">ALBum1</a></li>
+                            <li><a href="#">ALBum2</a></li>
+                            <li><a href="#">ALBum3</a></li>
+                            <li><a href="#">ALBum4</a></li>
+                            <li><a href="#">ALBum5</a></li>
+                            <li><a href="#">ALBum5</a></li>
+                            <li><a href="#">ALBum5</a></li>
+                            <li><a href="#">ALBum5</a></li>
+                            <li><a href="#">ALBum5</a></li>
+                            </ul>
+                          </div>
+                        <div>
+                            <a href="#">Âu Mỹ</a>
+                            <ul>
+                            <li><a href="#">Anh Yêu Cô ấy</a></li>
+                            <li><a href="#">ALBum2</a></li>
+                            <li><a href="#">ALBum3</a></li>
+                            <li><a href="#">ALBum4</a></li>
+                            <li><a href="#">ALBum5</a></li>
+                            </ul>
+                         </div>
+                        <div>
+                            <a href="#">Hàn Quốc</a>
+                            <ul>
+                            <li><a href="#">ALBum1</a></li>
+                            <li><a href="#">ALBum2</a></li>
+                            <li><a href="#">ALBum3</a></li>
+                            <li><a href="#">ALBum4</a></li>
+                           <li><a href="#">ALBum5</a></li>
+                           </ul>
+                         </div>
+                    </div>   
+				</li>
 				<li><a href="#">Tuyển Tập</a></li>
 				<li><a href="#">Video</a></li>
 				<li><a href="#">BXH</a></li>
