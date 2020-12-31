@@ -566,7 +566,7 @@
                 <div class="list_chart_music" id="top20-au-my" style="display: none;">    
 					
                     <ul>
-                         <% for (int i = 0; i < dt3.Rows.Count; i++)
+                         <% for (int i = 0; i < dt4.Rows.Count; i++)
                            {%>
 								<li>
 									<span><% =i+1%></span>
@@ -653,7 +653,21 @@
                         </ul>--%>
                 </div>
                 <div class="list_chart_music" id="top20-han-quoc"  style="display: none;">     
-                        <ul>
+
+					<ul>
+                         <% for (int i = 0; i < dt6.Rows.Count; i++)
+                           {%>
+								<li>
+									<span><% =i+1%></span>
+                                    <div>
+                                        <a href="ChiTietBaiHat.aspx?Song_ID=<% =dt6.Rows[i]["ID"].ToString() %>" style="color:#000000CC;"><h3><% =dt6.Rows[i]["Name"].ToString() %></h3></a>
+                                        <a href="ChiTietCaSy.aspx?Singer_ID=<% =dt6.Rows[i]["ID3"].ToString() %>" style="color:#000000CC;"><h5><% =dt6.Rows[i]["Name2"].ToString() %></h5></a>
+                                    </div>
+								</li>
+						<%} %>
+                    </ul>
+
+                        <%--<ul>
                              <li>
                              	<span>1</span>
                              	<div>
@@ -724,7 +738,7 @@
                              		<h5>MAMABO</h5>
                              	</div>
                              </li>
-                        </ul>
+                        </ul>--%>
                 </div>
 
 			</div>	

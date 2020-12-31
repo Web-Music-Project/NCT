@@ -44,7 +44,7 @@ namespace Web_Music.BUS
 
         public DataTable FindSongByName(string name)
         {
-            string sql = @"select * from Song where Name like '%" + name + "%'";
+            string sql = @"select * from Song left join Singer on Song.Singer_ID = Singer.ID left join Category on Song.Category_ID = Category.ID where Song.Name like '%" + name + "%'";
             return data.GetTable(sql);
         }
 

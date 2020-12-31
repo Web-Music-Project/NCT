@@ -63,5 +63,11 @@ namespace Web_Music.BUS
             return data.GetTable(sql);
         }
 
+        public DataTable GetSongBySingerId(int singer_id)
+        {
+            string sql = @"select * from Song,Singer where Song.Singer_ID = Singer.ID and Song.Singer_ID = "+singer_id;
+            return data.GetTable(sql);
+        }
+
     } 
 }

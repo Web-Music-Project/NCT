@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link href="./Style/MasterPage_style.css" rel="stylesheet" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
         <div>
             <%-- START HEADER --%>
             <header>
+                
 		<div class="container" id="header">
 			<div>
 				<h1>
@@ -38,7 +40,7 @@
                          <div>
                             <a href="#">Việt Nam</a>
                             <ul>
-                            <li><a href="#">ALBum1</a></li>
+                            <li><a href="#">Nhạc trẻ</a></li>
                             <li><a href="#">ALBum2</a></li>
                             <li><a href="#">ALBum3</a></li>
                             <li><a href="#">ALBum4</a></li>
@@ -91,8 +93,6 @@
 			</div>
 			<div>
 				<div>
-                    </div>
-                    
 				<ul >
 					<li id="test" style="position: relative;">
 						<a href="#" style="line-height:	 75px;display: inline-block;"><img src="../Image/MasterPage/nologin_user.png" alt="" style="width:35px;border-radius: 50%;"></a>
@@ -109,9 +109,9 @@
 				<input type="text" name="search-key" placeholder="Tìm ca sỹ....">
 				<button type="submit" name="key" style="cursor: pointer"><i class="fa fa-search	"></i></button>
 			</div>
-			</div>			
+			</div>	
 		</div>
-	</header>
+        </header>
             <%-- END HEADER --%>
             <asp:ContentPlaceHolder ID="content" runat="server">
 

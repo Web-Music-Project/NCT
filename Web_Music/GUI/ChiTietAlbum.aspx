@@ -110,231 +110,134 @@
                         <a href="#" id="bxh3">Hàn Quốc</a>                          
                 </div>
                 <div class="list_chart_music" id="top20-viet">     
-                        <ul>
-                             <li>
-                             	<span>1</span>
-                             	<div>
-                             		<h3>Trên tình bạn dưới tình yêu</h3>
-                             		<h5>Min</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>2</span>
-                             	<div>
-                             		<h3>Thế Thái</h3>
-                             		<h5>Hương Ly</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>3</span>
-                             	<div>
-                             		<h3>Anh Không Tha Thứ</h3>
-                             		<h5>Đình Dũng</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>4</span>
-                             	<div>
-                             		<h3>Tình Yêu Khủng Long</h3>
-                             		<h5>Hương Ly</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>5</span>
-                             	<div>
-                             		<h3>Thế Thái</h3>
-                             		<h5>Tùng Viu</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>6</span>
-                             	<div>
-                             		<h3>Nàng Thơ</h3>
-                             		<h5>Đình Dũng</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>7</span>
-                             	<div>
-                             		<h3>Thế Thái</h3>
-                             		<h5>Hương Ly</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>8</span>
-                             	<div>
-                             		<h3>Anh Không Tha Thứ</h3>
-                             		<h5>Đình Dũng</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>9</span>
-                             	<div>
-                             		<h3>Tình Yêu Khủng Long</h3>
-                             		<h5>Hương Ly</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>10</span>
-                             	<div>
-                             		<h3>Thế Thái</h3>
-                             		<h5>Tùng Viu</h5>
-                             	</div>
-                             </li>
-                            
-                        </ul>
+                      <ul>
+                        <% for (int i = 0; i < dt3.Rows.Count; i++)
+                           {%>
+								<li>
+									<span><% =i+1%></span>
+                                    <div>
+                                        <a href="ChiTietBaiHat.aspx?Song_ID=<% =dt3.Rows[i]["ID"].ToString() %>" style="color:#000000CC;"><h3><% =dt3.Rows[i]["Name"].ToString() %></h3></a>
+                                        <a href="ChiTietCaSy.aspx?Singer_ID=<% =dt3.Rows[i]["ID3"].ToString() %>" style="color:#000000CC;"><h5><% =dt3.Rows[i]["Name2"].ToString() %></h5></a>
+                                    </div>
+								</li>
+						<%} %>
+                    </ul>   
                 </div>
                 <div class="list_chart_music" id="top20-au-my" style="display: none;">     
-                        <ul>
-                             <li>
-                             	<span>1</span>
-                             	<div>
-                             		<h3>Mad At Disney</h3>
-                             		<h5>salem ilese</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>2</span>
-                             	<div>
-                             		<h3>That's Girl</h3>
-                             		<h5>Taylor Swift</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>3</span>
-                             	<div>
-                             		<h3>Sugar</h3>
-                             		<h5>Marron 5</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>4</span>
-                             	<div>
-                             		<h3>Reality</h3>
-                             		<h5>4P's</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>5</span>
-                             	<div>
-                             		<h3>Night King</h3>
-                             		<h5>Flexible</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>6</span>
-                             	<div>
-                             		<h3>I love you</h3>
-                             		<h5>Redicet</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>7</span>
-                             	<div>
-                             		<h3>Night King</h3>
-                             		<h5>Flexible</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>8</span>
-                             	<div>
-                             		<h3>I love you</h3>
-                             		<h5>Redicet</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>9</span>
-                             	<div>
-                             		<h3>Sugar</h3>
-                             		<h5>Marron 5</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>10</span>
-                             	<div>
-                             		<h3>Reality</h3>
-                             		<h5>4P's</h5>
-                             	</div>
-                             </li>
-                            
-                        </ul>
+                    <ul>
+                         <% for (int i = 0; i < dt4.Rows.Count; i++)
+                           {%>
+								<li>
+									<span><% =i+1%></span>
+                                    <div>
+                                        <a href="ChiTietBaiHat.aspx?Song_ID=<% =dt4.Rows[i]["ID"].ToString() %>" style="color:#000000CC;"><h3><% =dt4.Rows[i]["Name"].ToString() %></h3></a>
+                                        <a href="ChiTietCaSy.aspx?Singer_ID=<% =dt4.Rows[i]["ID3"].ToString() %>" style="color:#000000CC;"><h5><% =dt4.Rows[i]["Name2"].ToString() %></h5></a>
+                                    </div>
+								</li>
+						<%} %>
+                    </ul>   
                 </div>
                 <div class="list_chart_music" id="top20-han-quoc"  style="display: none;">     
-                        <ul>
-                             <li>
-                             	<span>1</span>
-                             	<div>
-                             		<h3>Daniel Jamse</h3>
-                             		<h5>Hương Ly</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>2</span>
-                             	<div>
-                             		<h3>Love Girl</h3>
-                             		<h5>Blackpink</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>3</span>
-                             	<div>
-                             		<h3>Thế Thái</h3>
-                             		<h5>Hương Ly</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>4</span>
-                             	<div>
-                             		<h3>I can't Stop Me</h3>
-                             		<h5>Twice</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>5</span>
-                             	<div>
-                             		<h3>MaGo</h3>
-                             		<h5>GFriend</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>6</span>
-                             	<div>
-                             		<h3>Maria</h3>
-                             		<h5>MAMABO</h5>
-                             	</div>
-                             </li>
-                               <li>
-                             	<span>7</span>
-                             	<div>
-                             		<h3>MaGo</h3>
-                             		<h5>GFriend</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>8</span>
-                             	<div>
-                             		<h3>Maria</h3>
-                             		<h5>MAMABO</h5>
-                             	</div>
-                             </li>
-                               <li>
-                             	<span>9</span>
-                             	<div>
-                             		<h3>MaGo</h3>
-                             		<h5>GFriend</h5>
-                             	</div>
-                             </li>
-                              <li>
-                             	<span>10</span>
-                             	<div>
-                             		<h3>Maria</h3>
-                             		<h5>MAMABO</h5>
-                             	</div>
-                             </li>
-                        </ul>
+                     <ul>
+                         <% for (int i = 0; i < dt6.Rows.Count; i++)
+                           {%>
+								<li>
+									<span><% =i+1%></span>
+                                    <div>
+                                        <a href="ChiTietBaiHat.aspx?Song_ID=<% =dt6.Rows[i]["ID"].ToString() %>" style="color:#000000CC;"><h3><% =dt6.Rows[i]["Name"].ToString() %></h3></a>
+                                        <a href="ChiTietCaSy.aspx?Singer_ID=<% =dt6.Rows[i]["ID3"].ToString() %>" style="color:#000000CC;"><h5><% =dt6.Rows[i]["Name2"].ToString() %></h5></a>
+                                    </div>
+								</li>
+						<%} %>
+                    </ul>   
                 </div>
 			</div>	
 		</div>
 	</div>
-<script src="./Script/Home_Script.js"></script>
+<script>
+    // bảng xếp hạng
+var a1 = document.getElementById('bxh1');
+var a2 = document.getElementById('bxh2');
+var a3 = document.getElementById('bxh3');
+
+var t1 = document.getElementById('top20-viet');
+var t2 = document.getElementById('top20-au-my');
+var t3 = document.getElementById('top20-han-quoc');
+a1.addEventListener("click", (event) => {
+	event.preventDefault();
+	t1.style.display = 'block';
+	a1.style.background = '#E74C3C';
+	a1.style.color = 'white';
+	a2.style.background = 'transparent';
+	a3.style.background = 'transparent';
+	t2.style.display = 'none';
+	t3.style.display = 'none';
+});
+a2.addEventListener("click", (event) => {
+	event.preventDefault();
+	t1.style.display = 'none';
+	a2.style.background = '#E74C3C';
+	a1.style.background = 'transparent';
+	a3.style.background = 'transparent';
+	a1.style.color = 'rgba(0,0,0,0.)';
+	t2.style.display = 'block';
+	t3.style.display = 'none';
+});
+a3.addEventListener("click", (event) => {
+	event.preventDefault();
+	t1.style.display = 'none';
+	t2.style.display = 'none';
+	t3.style.display = 'block';
+	a2.style.background = 'transparent';
+	a1.style.background = 'transparent';
+	a1.style.color = 'rgba(0,0,0,0.8)';
+	a3.style.background = '#E74C3C';
+});
+a1.addEventListener("mouseover", (event) => {
+	event.preventDefault();
+	a1.style.color = 'white';
+	a1.style.background = '#E74C3C';
+	a2.style.background = 'transparent';
+	a3.style.background = 'transparent';
+});
+a2.addEventListener("mouseover", (event) => {
+	event.preventDefault();
+
+	a2.style.background = '#E74C3C';
+	a1.style.background = 'transparent';
+	a1.style.color = 'rgba(0,0,0,0.8)';
+	a3.style.background = 'transparent';
+
+});
+a3.addEventListener("mouseover", (event) => {
+	event.preventDefault();
+
+	a2.style.background = 'transparent';
+	a1.style.background = 'transparent';
+	a1.style.color = 'rgba(0,0,0,0.8)';
+	a3.style.background = '#E74C3C';
+});
+
+////trending
+
+var togglelis = document.querySelectorAll('.trending ul li a img[open="toggle"]');
+console.log(togglelis);
+togglelis.forEach(img => {
+	img.onmouseover = (event) => {
+		var divs = document.querySelectorAll('.trending-item');
+
+		divs.forEach(div => div.style.display = 'none');
+		var targetid = event.target.getAttribute("target");
+		console.log(targetid);
+		var targettd = document.getElementById(targetid);
+		if (targettd.style.display == 'block') {
+			targettd.style.display = 'none';
+		}
+		else {
+			targettd.style.display = 'block';
+		}
+
+	}
+});
+</script>
 </asp:Content>

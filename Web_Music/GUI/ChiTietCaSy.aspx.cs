@@ -13,18 +13,21 @@ namespace Web_Music.GUI
     {
         BUS_Singer bus_singer = new BUS_Singer();
         public DataTable dt1 = new DataTable();
+        public DataTable dt2 = new DataTable();
+        public DataTable dt3 = new DataTable();
+        public DataTable dt4 = new DataTable();
+        public DataTable dt5 = new DataTable();
+        public DataTable dt6 = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                HienThi();
-            }
-        }
-
-        public void HienThi()
-        {
+            //Lấy Singer_ID trên url
             int singer_id = Convert.ToInt16(Request.QueryString["Singer_ID"]);
+
+            //Lấy thông tin singer gán vào dt1
             dt1 = bus_singer.GetSingerById(singer_id);
+
+            //Lấy các bài hát theo Singer_ID gán vào dt2
+            dt2 = bus_singer.GetSongBySingerId(singer_id);
         }
     }
 }
