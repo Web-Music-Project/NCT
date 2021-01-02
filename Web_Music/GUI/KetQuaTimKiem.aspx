@@ -1,33 +1,70 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/MasterPage.Master" AutoEventWireup="true" CodeBehind="ChiTietAlbum.aspx.cs" Inherits="Web_Music.GUI.ChiTietAlbum" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/MasterPage.Master" AutoEventWireup="true" CodeBehind="KetQuaTimKiem.aspx.cs" Inherits="Web_Music.GUI.KetQuaTimKiem" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
-    <% ="Album " + dt2.Rows[0]["Name"].ToString() %>
+    KQ
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="style" runat="server">
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="content" runat="server">
     <div class="container" id="main">
 		<div id="content">
 				<div id="today-playlist">
-					<h3><a href="#"><% =dt2.Rows[0]["Name"].ToString() %></a></h3>
+					<h3><a href="#">Ca sĩ</a></h3>
 					<div class="album-list">
 
 
-                        <%for (int i = 0; i < dt1.Rows.Count; i++)
-                                                  { %>
+                        <%	int max = 20, temp = 0;
+                            if(dt1.Rows.Count > max)
+                            {
+                                temp = max;
+                            }
+                            else
+                            {
+								temp = dt1.Rows.Count;
+                            }
+                            for (int i = 0; i < temp; i++)
+                            { %>
 								<div class="album-item">
 							<div>
-								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt1.Rows[i]["ID"].ToString() %>">
-									<img src="../../Image/Cover_vuong/<% =dt1.Rows[i]["Thumbnail"].ToString() %>" width="100%" style="height:143px; object-fit:cover;" onerror="this.onerror=null; this.src='../../Image/Cover_vuong/song_default_image.png'">	
+								<a href="ChiTietCaSy.aspx?Singer_ID=<% =dt1.Rows[i]["ID"].ToString() %>">
+									<img src="../../Image/Cover_vuong/<% =dt1.Rows[i]["Avatar"].ToString() %>" alt="image not found!" width="100%" style="height:143px; object-fit:cover;" onerror="this.onerror=null; this.src='../../Image/Cover_vuong/singer_default_image.png'">	
 								</a>
 							</div>
 							<p> 
-								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt1.Rows[i]["ID"].ToString() %>"><% =dt1.Rows[i]["Name"].ToString() %></a>
+								<a href="ChiTietCaSy.aspx?Singer_ID=<% =dt1.Rows[i]["ID"].ToString() %>"><% =dt1.Rows[i]["Name"].ToString() %></a>
 							</p>
-							<span id="view">
-								<span></span>
-								<span><% =dt1.Rows[i]["Views"].ToString() %></span>
-							</span>
+						</div>
+						<%} %>
+
+
+					</div>
+				</div>
+
+			<div id="today-playlist">
+					<h3><a href="#">Bài hát</a></h3>
+					<div class="album-list">
+
+
+                        <%
+							int max1 = 25, temp1 = 0;
+                            if(dt2.Rows.Count > max)
+                            {
+                                temp1 = max1;
+                            }
+                            else
+                            {
+								temp1 = dt2.Rows.Count;
+                            }
+							for (int i = 0; i < temp1; i++)
+                                                  { %>
+								<div class="album-item">
+							<div>
+								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt2.Rows[i]["ID"].ToString() %>">
+									<img src="../../Image/Cover_vuong/<% =dt2.Rows[i]["Thumbnail"].ToString() %>" alt="image not found!" width="100%" style="height:143px; object-fit:cover;" onerror="this.onerror=null; this.src='../../Image/Cover_vuong/singer_default_image.png'">	
+								</a>
+							</div>
+							<p> 
+								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt2.Rows[i]["ID"].ToString() %>"><% =dt2.Rows[i]["Name"].ToString() %></a>
+							</p>
 						</div>
 						<%} %>
 

@@ -23,8 +23,7 @@
         <div>
             <%-- START HEADER --%>
             <header>
-                
-		<div class="container" id="header">
+		<div class="container" id="header" style="height:50px;">
 			<div>
 				<h1>
 				<a href="Home.aspx" style="line-height: 60px;">
@@ -40,45 +39,32 @@
                          <div>
                             <a href="#">Việt Nam</a>
                             <ul>
-                            <li><a href="#">Nhạc trẻ</a></li>
-                            <li><a href="#">ALBum2</a></li>
-                            <li><a href="#">ALBum3</a></li>
-                            <li><a href="#">ALBum4</a></li>
-                            <li><a href="#">ALBum5</a></li>
-                            <li><a href="#">ALBum5</a></li>
-                            <li><a href="#">ALBum5</a></li>
-                            <li><a href="#">ALBum5</a></li>
-                            <li><a href="#">ALBum5</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=1">Nhạc Trẻ</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=2">Trữ Tình</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=3">Rap Việt</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=4">Tiền Chiến</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=5">Nhạc Trịnh</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=6">Cách Mạng</a></li>
                             </ul>
                           </div>
                         <div>
                             <a href="#">Âu Mỹ</a>
                             <ul>
-                            <li><a href="#">Anh Yêu Cô ấy</a></li>
-                            <li><a href="#">ALBum2</a></li>
-                            <li><a href="#">ALBum3</a></li>
-                            <li><a href="#">ALBum4</a></li>
-                            <li><a href="#">ALBum5</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=7">Pop</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=8">Rock</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=9">Dance</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=10">R&B</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=21">Latin</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=22">Indie</a></li>
                             </ul>
                          </div>
                         <div>
-                            <a href="#">Hàn Quốc</a>
+                            <a href="#">Châu Á</a>
                             <ul>
-                            <li><a href="#">ALBum1</a></li>
-                            <li><a href="#">ALBum2</a></li>
-                            <li><a href="#">ALBum3</a></li>
-                            <li><a href="#">ALBum4</a></li>
-                           <li><a href="#">ALBum5</a></li>
-                           </ul>
-                         </div>
-                            <div>
-                            <a href="#">Hàn Quốc</a>
-                            <ul>
-                            <li><a href="#">ALBum1</a></li>
-                            <li><a href="#">ALBum2</a></li>
-                            <li><a href="#">ALBum3</a></li>
-                            <li><a href="#">ALBum4</a></li>
-                           <li><a href="#">ALBum5</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=23">Nhạc Hàn</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=24">Nhạc Hoa</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=25">Nhạc Nhật</a></li>
+                            <li><a href="ChiTietCategory.aspx?Category_ID=26">Nhạc Thái</a></li>
                            </ul>
                          </div>
                     </div> 
@@ -97,8 +83,11 @@
 					<li id="test" style="position: relative;">
 						<a href="#" style="line-height:	 75px;display: inline-block;"><img src="../Image/MasterPage/nologin_user.png" alt="" style="width:35px;border-radius: 50%;"></a>
 						<span>
+							<a href="#">Welcome <% =Session["login_username"] %></a>
+							<a href="#" runat="server" onserverclick="FavoriteSong_ServerClick">Bài hát yêu thích</a>
 							<a href="Login.aspx">Đăng nhập</a>
 							<a href="Register.aspx">Đăng kí</a>
+							<a href="#" runat="server" onserverclick="Logout_ServerClick">Đăng xuất</a>
 						</span>
 					</li>
 					<li><a href="#"><img src="#" alt=""></a></li>
@@ -106,12 +95,17 @@
 				</ul>
 			</div>
 			<div style="display: inline-block; padding:6px 20px;margin-top: 8px;line-height: 25px;" id="form">
-				<input type="text" name="search-key" placeholder="Tìm ca sỹ....">
-				<button type="submit" name="key" style="cursor: pointer"><i class="fa fa-search	"></i></button>
+				<%--<input type="text" name="search-key" placeholder="Tìm bài hát, ca sỹ...." id="txtSearch">--%>
+                <asp:TextBox runat="server" placeholder="Tìm bài hát, ca sĩ...." ID="txtSearch" />
+				<%--<button type="submit" style="cursor: pointer"><i class="fa fa-search"></i></button>--%>
+                <a href="#" onserverclick="Search_ServerClick" runat="server" style="color:black;"><i class="fa fa-search"></i></a>
+
+			</div>
 			</div>
 			</div>	
-		</div>
-        </header>
+
+            </header>
+        
             <%-- END HEADER --%>
             <asp:ContentPlaceHolder ID="content" runat="server">
 

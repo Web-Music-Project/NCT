@@ -24,8 +24,16 @@ namespace Web_Music.GUI
             }
             else
             {
-                msg.Text = "";
-                bus_TaiKhoan.AddAccountForUser(txtusername.Text, txtpass.Text, "user");
+                if (!bus_TaiKhoan.CheckExistUsername(txtusername.Text))
+                {
+                    bus_TaiKhoan.AddAccountForUser(txtusername.Text, txtpass.Text, "user");
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    msg.Text = "Tên đăng nhập này đã tồn tại";
+                }
+                
             }
         }
     }

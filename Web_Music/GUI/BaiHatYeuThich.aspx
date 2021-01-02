@@ -1,15 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/MasterPage.Master" AutoEventWireup="true" CodeBehind="ChiTietAlbum.aspx.cs" Inherits="Web_Music.GUI.ChiTietAlbum" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/MasterPage.Master" AutoEventWireup="true" CodeBehind="BaiHatYeuThich.aspx.cs" Inherits="Web_Music.GUI.BaiHatYeuThich" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
-    <% ="Album " + dt2.Rows[0]["Name"].ToString() %>
+    Bài hát yêu thích
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="style" runat="server">
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="content" runat="server">
     <div class="container" id="main">
 		<div id="content">
 				<div id="today-playlist">
-					<h3><a href="#"><% =dt2.Rows[0]["Name"].ToString() %></a></h3>
+					<h3><a href="#">Bài hát yêu thích của bạn</a></h3>
 					<div class="album-list">
 
 
@@ -17,12 +16,12 @@
                                                   { %>
 								<div class="album-item">
 							<div>
-								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt1.Rows[i]["ID"].ToString() %>">
+								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt1.Rows[i]["ID1"].ToString() %>">
 									<img src="../../Image/Cover_vuong/<% =dt1.Rows[i]["Thumbnail"].ToString() %>" width="100%" style="height:143px; object-fit:cover;" onerror="this.onerror=null; this.src='../../Image/Cover_vuong/song_default_image.png'">	
 								</a>
 							</div>
 							<p> 
-								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt1.Rows[i]["ID"].ToString() %>"><% =dt1.Rows[i]["Name"].ToString() %></a>
+								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt1.Rows[i]["ID1"].ToString() %>"><% =dt1.Rows[i]["Name"].ToString() %></a>
 							</p>
 							<span id="view">
 								<span></span>

@@ -48,7 +48,8 @@ namespace Web_Music.GUI.Admin
                 avatar_source = upload_avatar.FileName;
             }
             bus.UpdateSinger(txtname.Text, txtdate.Text, gioitinh.SelectedValue, txtquoctich.Text,avatar_source, txtgioithieu.Text.Replace("'","''"), id);
-            Response.Redirect("QuanLyCaSy.aspx");
+            //Response.Redirect("QuanLyCaSy.aspx");
+            HienThi();
         }
     }
 }
