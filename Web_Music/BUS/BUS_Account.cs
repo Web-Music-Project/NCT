@@ -28,12 +28,8 @@ namespace Web_Music.BUS
         }
         public void AddAccountForUser(string username, string password, string role)
         {
-            if (!CheckExistUsername(username))
-            {
                 string sql = @"insert into Account values('" + username + "','" + password + "','" + role + "')";
                 data.ExcuteNonQuerry(sql);
-            }
-
         }
         public bool CheckExistUsername(string username)
         {
@@ -56,7 +52,7 @@ namespace Web_Music.BUS
         }
         public DataTable getUserById(int id)
         {
-            string sql = "select *from Account where id = '" + id + "'";
+            string sql = "select * from Account where id = '" + id + "'";
             return data.GetTable(sql);
         }
         public void DeleteAccount(int id)
@@ -78,5 +74,11 @@ namespace Web_Music.BUS
             return data.GetTable(sql);
         }
 
+        public int GetIdByUsername(string username)
+        {
+            string sql = @"select * from Account where Username = '"+username+"'";
+            DataTable dt = data.GetTable(sql);
+            return int.Parse(dt.Rows[0]["ID"].ToString());
+        }
     }
 }

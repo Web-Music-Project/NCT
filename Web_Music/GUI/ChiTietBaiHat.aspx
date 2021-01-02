@@ -3,35 +3,30 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="style" runat="server">
-        <link rel="stylesheet" href="./Style/ChiTietBaiHat.css">
+    <link rel="stylesheet" href="./Style/ChiTietBaiHat.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
                                integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <style>
+        #content_AddToFavorite_msg{
+            color:red;
+        }
+        #content_MinusToFavorite_msg{
+            color:red;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="content" runat="server">
     <div class="wrap-box" style="margin-top:60px">
         <div class="box-content">
             <div class="box-left width-box">
-                <%--<div class="category">
-                    <span >
-                       <a class="category-text" href="#"> Nghe nhạc</a>
-                    </span>
-                    <i class=" icon-text fas fa-angle-right "></i>
-                    <span >
-                        <a class=" category-text" href="#">Bài hát nhạc trẻ</a>
-                    </span>
-                    <i class="icon-text fas fa-angle-right "></i>
-                    <span >
-                        <a class="category-text" href="#">Hoài Lâm</a>
-                    </span>
-                </div>--%>
                 <div class="title-music">
                     <h1 class="name-music" ><%=dt.Rows[0]["Name"].ToString() %> - </h1> 
                     <h1 class="name-singer">
-                        <a href="#" class="name-singer"><%=dt.Rows[0]["Name1"].ToString() %></a>
+                        <a href="ChiTietCaSy.aspx?Singer_ID=<% =dt.Rows[0]["Singer_ID"] %>" class="name-singer" style="z-index:10;"><%=dt.Rows[0]["Name1"].ToString() %></a>
                     </h1>
                     <%--<a href="#" class="name-singer"><i class=" icon-video fas fa-film"></i></a>--%>
     
-                    <h3 class="views-music" >
+                    <h3 class="views-music">
                         <i class="fas fa-headphones-alt"></i>
                         <span><%=dt.Rows[0]["Views"].ToString() %></span>
                     </h3>
@@ -40,7 +35,7 @@
                 <div class="box-left-music" style="padding-top:266px;background-image: url(../../Image/Cover_vuong/play_background.jpg);
     background-repeat: no-repeat;
     background-size: 890px;background-position:center">
-                    <audio controls="controls" style="display:block; width:100%;border:none;outline:none;background-color:transparent;">
+                    <audio controls="controls" style="display:block; width:100%;border:none;outline:none;background-color:transparent;" autoplay>
                         <source src="../Music/<%=dt.Rows[0]["source"].ToString() %>" type="audio/mp3" />
                     </audio>
                 </div>
@@ -52,9 +47,36 @@
                         BÀI HÁT NGẪU NHIÊN
                     </h3>
                 </div>
-                <div class="box-right--list">
-                    <ul>
-                        <li class="box-right--items">
+                    <div class="box-right--list">
+                        <ul>
+                            <%  int max = 16;
+                                int temp = 0;
+                                if(dt1.Rows.Count > max)
+                                {
+                                    temp = max;
+                                }
+                                else
+                                {
+                                    temp = dt1.Rows.Count;
+                                }
+                                for (int i = 0; i < temp; i++)
+                                { %>
+                                    <li class="box-right--items">
+                                        <a href="#">
+                                            <div class="box-right--play">
+                                                <i class="icon-music fas fa-music"></i>
+                                            </div>
+                                        </a>
+                           
+
+                                        <div class="info-music">
+                                            <h3 class="box-right--song"><a href="ChiTietBaiHat.aspx?Song_ID=<% =dt1.Rows[i]["ID"] %>"><% =dt1.Rows[i]["Name"].ToString() %></a></h3>
+                                            <h4 class="box-right--singer"><a href="ChiTietCaSy.aspx?Singer_ID=<% =dt1.Rows[i]["Singer_ID"] %>"><% =dt1.Rows[i]["Name1"].ToString() %></a></h4>
+                                        </div>
+                                        <span class="box-right--viewmusic" ><i class="fas fa-headphones-alt"></i>150.998</span>
+                                    </li>
+                            <%} %>
+                        <%--<li class="box-right--items">
                             <a href="">
                                 <div class="box-right--play">
                                     <i class="icon-music fas fa-music"></i>
@@ -133,11 +155,8 @@
                                 <h4 class="box-right--singer"><a href="#">Bùi Anh Tuấn</a></h4>
                             </div>
                             <span class="box-right--viewmusic" ><i class="fas fa-headphones-alt"></i> </i>150.998</span>
-                        </li>
+                        </li>--%>
                     </ul>
-                    <p>
-
-                    </p>
                 </div>
 
             </div>
@@ -152,29 +171,25 @@
                         <p class="provided--text__one">Cung cấp bởi : </p>   
                         <p class="provided--text__two">PTVA MUSIC DISTRIBUTION</p>
                     </div>
-                    <ul class="statusbar-list" >
-                        <li>
-                            <a href="#"> 
+                    <ul class="statusbar-list" style="padding-left:-100px;" >
+                        <li style="margin-left:-150px;">
+                            <a href="#" runat="server" onserverclick="AddToFavorite_ServerClick"> 
                                 <i class="far fa-plus-square"></i>
-                                Thêm vào
+                                Thêm vào danh sách yêu thích
                              </a>
+                            <div><asp:Label Text="" runat="server" ID="AddToFavorite_msg"/></div>
+                        </li>
+                       <li>
+                            <a href="#" runat="server" onserverclick="MinusToFavorite_ServerClick"> 
+                                <i class="far fa-minus-square"></i>
+                                Xóa khỏi danh sách yêu thích
+                             </a>
+                            <div><asp:Label Text="" runat="server" ID="MinusToFavorite_msg"/></div>
                         </li>
                         <li>
-                            <a href="#"> 
+                            <a href="../Music/<%=dt.Rows[0]["source"].ToString() %>" download> 
                                 <i class="fas fa-download"></i>
                                 Tải về
-                             </a>
-                        </li>
-                        <li>
-                            <a href="#"> 
-                                <i class="fas fa-share-alt-square"></i>
-                                Chia sẻ
-                             </a>
-                        </li>
-                        <li>
-                            <a href="#"> 
-                                <i class="fas fa-mobile-alt"></i>
-                                Nhạc chờ
                              </a>
                         </li>
                     </ul>
@@ -185,8 +200,7 @@
              <div class="lyric-box">
                  <div class="lyric-system">
                      <h2 class="lyric-system--song">LỜI BÀI HÁT: <%=dt.Rows[0]["Name"].ToString() %></h2>
-                
-                     <h4 class="lyric-system--text">Ca sĩ: <%=dt.Rows[0]["Name1"].ToString() %></h4>
+                     <h4 class="lyric-system--text">Ca sĩ: <a href="ChiTietCaSy.aspx?Singer_ID=<% =dt.Rows[0]["Singer_ID"] %>" style="color:#2DAAED"><%=dt.Rows[0]["Name1"].ToString() %></a></h4>
                      <h4 class="lyric-system--text">Lời đăng bởi: <span>Admin</span></h4>
                      
                  </div>
@@ -206,7 +220,7 @@
          </div> 
         
          <!--  --> 
-         <div class="list-album width-box">
+         <%--<div class="list-album width-box">
             <a href="#">
                 <h3 class="list-album--title">PLAYLIST | ANLBUM</h3> <i class=" list-album--icon fas fa-angle-right "></i>
             </a>
@@ -268,6 +282,6 @@
                     </div>
                 </li>
             </ul>
-         </div>
+         </div>--%>
    </div>
 </asp:Content>

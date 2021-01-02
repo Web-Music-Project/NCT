@@ -59,7 +59,7 @@ namespace Web_Music.BUS
 
         public DataTable FindSingerByName(string name)
         {
-            string sql = @"select * from Singer where Name like '%"+name+"%'";
+            string sql = @"select * from Singer where Name like N'%"+name+"%'";
             return data.GetTable(sql);
         }
 

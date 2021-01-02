@@ -1,32 +1,31 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/MasterPage.Master" AutoEventWireup="true" CodeBehind="ChiTietAlbum.aspx.cs" Inherits="Web_Music.GUI.ChiTietAlbum" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/MasterPage.Master" AutoEventWireup="true" CodeBehind="ChiTietCategory.aspx.cs" Inherits="Web_Music.GUI.ChiTietCategory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
-    <% ="Album " + dt2.Rows[0]["Name"].ToString() %>
+    <% =dt1.Rows[0]["Name"].ToString() %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="style" runat="server">
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="content" runat="server">
     <div class="container" id="main">
 		<div id="content">
 				<div id="today-playlist">
-					<h3><a href="#"><% =dt2.Rows[0]["Name"].ToString() %></a></h3>
+					<h3><a href="#"><% =dt1.Rows[0]["Name"].ToString() %></a></h3>
 					<div class="album-list">
 
 
-                        <%for (int i = 0; i < dt1.Rows.Count; i++)
+                        <%for (int i = 0; i < dt2.Rows.Count; i++)
                                                   { %>
 								<div class="album-item">
 							<div>
-								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt1.Rows[i]["ID"].ToString() %>">
-									<img src="../../Image/Cover_vuong/<% =dt1.Rows[i]["Thumbnail"].ToString() %>" width="100%" style="height:143px; object-fit:cover;" onerror="this.onerror=null; this.src='../../Image/Cover_vuong/song_default_image.png'">	
+								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt2.Rows[i]["ID"].ToString() %>">
+									<img src="../../Image/Cover_vuong/<% =dt2.Rows[i]["Thumbnail"].ToString() %>" alt="image not found!" width="100%" style="height:143px; object-fit:cover;" >	
 								</a>
 							</div>
 							<p> 
-								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt1.Rows[i]["ID"].ToString() %>"><% =dt1.Rows[i]["Name"].ToString() %></a>
+								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt2.Rows[i]["ID"].ToString() %>"><% =dt2.Rows[i]["Name"].ToString() %></a>
 							</p>
 							<span id="view">
 								<span></span>
-								<span><% =dt1.Rows[i]["Views"].ToString() %></span>
+								<span><% =dt2.Rows[i]["Views"].ToString() %></span>
 							</span>
 						</div>
 						<%} %>
@@ -76,27 +75,27 @@
 					<h3><a href="#">CHỦ ĐỀ HOT</a></h3>
 					<ul>
 						<li>
-							<a href="ChiTietAlbum.aspx?Album_ID=18"> <%--18 là EDM--%>
+							<a href="ChiTietAlbum.aspx?Album_ID=18">
 								<img src="https://avatar-ex-swe.nixcdn.com/topic/thumb/2020/09/03/4/5/9/8/1599120670684_org.jpg" alt="" width="300px">
 							</a>
 						</li>
 						<li>
-							<a href="ChiTietAlbum.aspx?Album_ID=19"> <%--19 là MÙA ĐÔNG--%>
+							<a href="#">
 								<img src="https://avatar-ex-swe.nixcdn.com/topic/thumb/2020/12/04/5/e/f/9/1607076279751_org.jpg" alt="" width="300px">
 							</a>
 						</li>
 						<li>
-							<a href="ChiTietAlbum.aspx?Album_ID=20"> <%--20 là CA SĨ HOA NGƯ--%>
+							<a href="#">
 								<img src="https://avatar-ex-swe.nixcdn.com/topic/thumb/2020/06/17/7/d/8/9/1592361651958_org.jpg" alt="" width="300px">
 							</a>
 						</li>
 						<li>
-							<a href="ChiTietAlbum.aspx?Album_ID=21"> <%--21 là YG FAMILY--%>
+							<a href="#">
 								<img src="https://avatar-ex-swe.nixcdn.com/topic/thumb/2020/11/04/c/1/3/4/1604476818537_org.jpg" alt="" width="300px">
 							</a>
 						</li>
 						<li>
-							<a href="ChiTietAlbum.aspx?Album_ID=22"> <%--22 là NONSTOP--%>
+							<a href="#">
 								<img src="https://avatar-ex-swe.nixcdn.com/topic/thumb/2020/06/11/9/5/9/3/1591856761476_org.jpg" alt="" width="300px">
 							</a>
 						</li>

@@ -324,7 +324,7 @@ line-height: 12px;
             <div class="story-header--detail width-box">
                 <div class="detail__info">
                     <div class="detail__info--img">
-                        <img src="../../Image/Cover_vuong/<% =dt1.Rows[0]["Avatar"].ToString() %>" alt="" class="detail--img" style="object-fit:cover;">
+                        <img src="../../Image/Cover_vuong/<% =dt1.Rows[0]["Avatar"].ToString() %>" alt="" class="detail--img" style="object-fit:cover;" onerror="this.onerror=null; this.src='../../Image/Cover_vuong/singer_default_image.png'">
                     </div>
                     <div class="detail__info--system">
                         <p class="detail__info--singer"><% =dt1.Rows[0]["Name"].ToString() %></p>
@@ -335,7 +335,7 @@ line-height: 12px;
                 </div>
 
                 <div class="detail__img">
-                    <img class="detail__img" src="../../Image/Cover_vuong/<% =dt1.Rows[0]["Avatar"].ToString() %>" alt="" style="object-fit:contain;">
+                    <img class="detail__img" src="../../Image/Cover_vuong/<% =dt1.Rows[0]["Avatar"].ToString() %>" alt="" style="object-fit:contain;" onerror="this.onerror=null; this.src='../../Image/Cover_vuong/singer_default_image.png'">
                 </div>
             </div>
         </div>
@@ -367,7 +367,7 @@ line-height: 12px;
 								<div class="album-item">
 							<div>
 								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt2.Rows[i]["ID"].ToString() %>">
-									<img src="../../Image/Cover_vuong/<% =dt2.Rows[i]["Thumbnail"].ToString() %>" alt="image not found!" style="width:100%;height:143px; object-fit:cover" /> 	
+									<img src="../../Image/Cover_vuong/<% =dt2.Rows[i]["Thumbnail"].ToString() %>" style="width:100%;height:143px; object-fit:cover;" onerror="this.onerror=null; this.src='../../Image/Cover_vuong/song_default_image.png'"/> 	
 								</a>
 							</div>
 							<p> 

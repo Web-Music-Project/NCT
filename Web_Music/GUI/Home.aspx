@@ -52,7 +52,7 @@
 			
 
 				<div id="today-playlist">
-					<h3><a href="#">Nghe gì hôm nay</a></h3>
+					<h3><a href="#"><% =dt1.Rows[0]["Name1"].ToString() %></a></h3>
 					<div class="album-list">
 
 
@@ -62,7 +62,7 @@
 								<div class="album-item">
 							<div>
 								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt1.Rows[i]["ID"].ToString() %>">
-									<img src="../../Image/Cover_vuong/<% =dt1.Rows[i]["Thumbnail"].ToString() %>" alt="image not found!" style="width:100%;height:143px; object-fit:cover" /> 	
+									<img src="../../Image/Cover_vuong/<% =dt1.Rows[i]["Thumbnail"].ToString() %>" style="width:100%;height:143px; object-fit:cover" onerror="this.onerror=null; this.src='../../Image/Cover_vuong/song_default_image.png'" /> 	
 								</a>
 							</div>
 							<p> 
@@ -90,7 +90,7 @@
 								<div class="album-item">
 							<div>
 								<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt2.Rows[i]["ID"].ToString() %>">
-									<img src="../../Image/Cover_vuong/<% =dt2.Rows[i]["Thumbnail"].ToString() %>" alt="img" style="width:100%;height:143px; object-fit:cover">			
+									<img src="../../Image/Cover_vuong/<% =dt2.Rows[i]["Thumbnail"].ToString() %>" style="width:100%;height:143px; object-fit:cover" onerror="this.onerror=null; this.src='../../Image/Cover_vuong/song_default_image.png'" />		 
 								</a>
 							</div>
 							<p>
