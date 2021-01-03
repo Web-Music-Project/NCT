@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+   
     <link href="./Style/MasterPage_style.css" rel="stylesheet" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,7 +84,7 @@
 					<li id="test" style="position: relative;">
 						<a href="#" style="line-height:	 75px;display: inline-block;"><img src="../Image/MasterPage/nologin_user.png" alt="" style="width:35px;border-radius: 50%;"></a>
 						<span>
-							<a href="#">Welcome <% =Session["login_username"] %></a>
+							<a href="User-Form.aspx">Welcome <%  =Session["login_username"] %></a>
 							<a href="#" runat="server" onserverclick="FavoriteSong_ServerClick">Bài hát yêu thích</a>
 							<a href="Login.aspx">Đăng nhập</a>
 							<a href="Register.aspx">Đăng kí</a>

@@ -51,6 +51,10 @@
         .input input{
             margin-bottom: 20px;
         }
+          div div.input:nth-child(3) input ,div div:nth-child(4) input
+         {
+              margin-left:20px;
+         }
 /*Đoạn này asp:button tự render ra 1 ô input có ID là content_dang_nhap (content_+tên ID asp:button)*/
         #content_dang_nhap 
         {
@@ -70,7 +74,7 @@
             margin-bottom: 10px;
             display: block;
         }
-        
+       
 
 </style>
 </asp:Content>
@@ -88,11 +92,13 @@
                         <asp:TextBox ID="txtpass" runat="server" placeholder="Mật khẩu cũ" TextMode="Password"></asp:TextBox>
                     </div>
                      <div class="input">
-                        <asp:TextBox ID="txtpassnew" runat="server" placeholder="Mật khẩu mới" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server" placeholder="Mật khẩu mới" TextMode="Password" CssClass="view"></asp:TextBox>
+                         <a href="#" class="view1" ><i class="fa fa-eye" aria-hidden="true" id="view1"></i></a>
 
                     </div>
                      <div class="input">
-                        <asp:TextBox ID="txtpassnew1" runat="server" placeholder="Xác nhận mật khẩu mới" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtpassnew1" runat="server" placeholder="Xác nhận mật khẩu mới" TextMode="Password"  CssClass="view2"></asp:TextBox>
+                         <a href="#" class="view3"><i class="fa fa-eye" aria-hidden="true" id="view3"></i></a>
 
                     </div>
                         <asp:Label Text="" runat="server" ID="msg"/>
@@ -104,5 +110,29 @@
         </div>
     </div>
 
-
+    <script>
+        var view1 = document.getElementById('view1');
+        console.log(view1);
+        view1.addEventListener('click', function (event) {
+            var view = document.querySelector('.view');
+            console.log(view);
+            if (view.type == "password") {
+                view.type = "text";
+            }
+            else {
+                view.type = "password";
+            }
+            
+        });
+        var view3 = document.getElementById('view3');
+        view3.addEventListener('click', function (event) {
+            var view2 = document.querySelector('.view2');
+            if (view2.type == "password") {
+                view2.type = "text";
+            }
+            else {
+                view2.type = "password";
+            }
+        });
+    </script>
 </asp:Content>
