@@ -21,7 +21,7 @@ namespace Web_Music.GUI.Admin
             string username = txttaikhoan.Text;
             string pass = txtmatkhau.Text;
             string role = ddl.SelectedValue.ToString();
-            bus.AddAccountForUser(username, pass, role);
+            bus.InsertAccountForUser(username, pass, role);
             DataBind();
         }
     }

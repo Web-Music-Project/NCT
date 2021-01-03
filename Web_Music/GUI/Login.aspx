@@ -63,6 +63,12 @@
             font-size: 14px;
             font-weight: 600;
         }
+        #content_msg{
+            color: red;
+            margin-left: 117px;
+            margin-bottom: 10px;
+            display: block;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="content" runat="server">
@@ -76,7 +82,9 @@
                     </div>
                     <div class="input">
                         <asp:TextBox ID="txtpass" runat="server" placeholder="Mật khẩu" TextMode="Password"></asp:TextBox>
+
                     </div>
+                        <asp:Label Text="" runat="server" ID="msg"/>
                 </div>
                 <div>
                     <asp:Button Text="Đăng nhập" runat="server" id="dang_nhap" type="submit" OnClick="dang_nhap_Click"/>

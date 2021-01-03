@@ -15,6 +15,14 @@ slider2.style.display = 'none';
 slider3.style.display = 'none';
 slider4.style.display = 'none';
 slider5.style.display = 'none';
+
+child1.onmouseover = function () {
+	slider1.style.display = 'block';
+	slider2.style.display = 'none';
+	slider3.style.display = 'none';
+	slider4.style.display = 'none';
+	slider5.style.display = 'none';
+};
 child2.onmouseover = function () {
 	slider1.style.display = 'none';
 	slider2.style.display = 'block';
@@ -128,4 +136,8 @@ togglelis.forEach(img => {
 
 	}
 });
+
+
+
+
 

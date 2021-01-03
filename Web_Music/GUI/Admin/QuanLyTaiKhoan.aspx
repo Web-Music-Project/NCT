@@ -25,7 +25,7 @@
                           CommandArgument='<%# Bind("ID")%>'
                           CommandName="sua" OnCommand="Sua_Click"/>
                     <asp:Button runat="server" ID="btnXoa" Text="Xóa"
-                          CssClass="btn btn-danger" CommandArgument='<%# Bind("ID") %>' CommandName="xoa" OnCommand="btnXoa_Command" OnClientClick="return confirm('Ban Co Chac Chan Xoa Khong')"/>
+                          CssClass="btn btn-danger" CommandArgument='<%# Bind("ID") %>' CommandName="xoa" OnCommand="btnXoa_Command" OnClientClick="return confirm('Bạn có chắc chắn xóa không?')"/>
                      <ItemTemplate>
                 </ItemTemplate>
                 </ItemTemplate>

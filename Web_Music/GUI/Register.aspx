@@ -66,10 +66,9 @@
             font-weight: 600;
             margin-top: 20px;
         }
-        #msg{
+        #content_msg{
             padding-left: 116px;
             color: red;
-
         }
     </style>
 </asp:Content>

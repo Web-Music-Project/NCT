@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GUI\Admin\AcessDeny.aspx" />
     <Content Include="GUI\Admin\css\maps\jquery-jvectormap-2.0.3.css" />
     <Content Include="GUI\Admin\images\img.jpg" />
     <Content Include="GUI\Admin\js\datepicker\daterangepicker.js" />
@@ -89,6 +90,7 @@
     <Content Include="GUI\Admin\ThemCaSy.aspx" />
     <Content Include="GUI\Admin\ThemDanhMuc.aspx" />
     <Content Include="GUI\Admin\ThemTaiKhoan.aspx" />
+    <Content Include="GUI\BaiHatYeuThich.aspx" />
     <Content Include="GUI\build\css\custom.css" />
     <Content Include="GUI\build\css\custom.min.css" />
     <Content Include="GUI\build\images\back_disabled.png" />
@@ -103,7 +105,9 @@
     <Content Include="GUI\ChiTietAlbum.aspx" />
     <Content Include="GUI\ChiTietBaiHat.aspx" />
     <Content Include="GUI\ChiTietCaSy.aspx" />
+    <Content Include="GUI\ChiTietCategory.aspx" />
     <Content Include="GUI\Home.aspx" />
+    <Content Include="GUI\KetQuaTimKiem.aspx" />
     <Content Include="GUI\Login.aspx" />
     <Content Include="GUI\Register.aspx" />
     <Content Include="GUI\Script\Home_Script.js" />
@@ -112,6 +116,7 @@
     <Content Include="GUI\src\js\helpers\smartresize.js" />
     <Content Include="GUI\Style\ChiTietBaiHat.css" />
     <Content Include="GUI\Style\MasterPage_style.css" />
+    <Content Include="GUI\User_Form.aspx" />
     <Content Include="Image\Cover_vuong\Can_Mot_Khong_Hai.jpg" />
     <Content Include="Image\Cover_vuong\Dinh_Duyen.jpg" />
     <Content Include="Image\Cover_vuong\Ket_Thuc_Bat_Ngo.jpg" />
@@ -3815,6 +3820,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BUS_Album.cs" />
+    <Compile Include="BUS\BUS_Favorite_Song.cs" />
     <Compile Include="BUS\BUS_Singer.cs" />
     <Compile Include="BUS\BUS_Category.cs" />
     <Compile Include="BUS\BUS_Multitable.cs" />
@@ -3822,7 +3828,13 @@
     <Compile Include="BUS\BUS_Account.cs" />
     <Compile Include="BUS\BUS_Song_Album.cs" />
     <Compile Include="DAL\Data.cs" />
-    <Compile Include="DTO\Tai_Khoan.cs" />
+    <Compile Include="GUI\Admin\AcessDeny.aspx.cs">
+      <DependentUpon>AcessDeny.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\AcessDeny.aspx.designer.cs">
+      <DependentUpon>AcessDeny.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Admin\AdminMaster.Master.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3942,6 +3954,13 @@
     <Compile Include="GUI\Admin\ThemTaiKhoan.aspx.designer.cs">
       <DependentUpon>ThemTaiKhoan.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\BaiHatYeuThich.aspx.cs">
+      <DependentUpon>BaiHatYeuThich.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\BaiHatYeuThich.aspx.designer.cs">
+      <DependentUpon>BaiHatYeuThich.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ChiTietAlbum.aspx.cs">
       <DependentUpon>ChiTietAlbum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3963,12 +3982,26 @@
     <Compile Include="GUI\ChiTietCaSy.aspx.designer.cs">
       <DependentUpon>ChiTietCaSy.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ChiTietCategory.aspx.cs">
+      <DependentUpon>ChiTietCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\ChiTietCategory.aspx.designer.cs">
+      <DependentUpon>ChiTietCategory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\KetQuaTimKiem.aspx.cs">
+      <DependentUpon>KetQuaTimKiem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\KetQuaTimKiem.aspx.designer.cs">
+      <DependentUpon>KetQuaTimKiem.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -3990,6 +4023,13 @@
     </Compile>
     <Compile Include="GUI\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User_Form.aspx.cs">
+      <DependentUpon>User_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\User_Form.aspx.designer.cs">
+      <DependentUpon>User_Form.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

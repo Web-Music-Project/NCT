@@ -50,7 +50,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Welcome</span>
-                            <h2>Michael Scofiled</h2>
+                            <h2><% =Session["login_username"] %></h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -61,7 +61,7 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
-                                <li><a href="#"><i class="fa fa-home"></i>Trang chủ</a>
+                                <li><a href="QuanLyTaiKhoan.aspx"><i class="fa fa-home"></i>Trang chủ</a>
                                     
                                 </li>
                                 <li><a><i class="fa fa-edit"></i>Quản lý<span class="fa fa-chevron-down"></span></a>
@@ -110,7 +110,7 @@
                                         <span>Settings</span>
                                     </a>
                                     <a class="dropdown-item" href="javascript:;">Help</a>
-                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>Log Out</a>
+                                    <a class="dropdown-item" href="#" runat="server" onserverclick="Logout_ServerClick"><i class="fa fa-sign-out pull-right"></i>Log Out</a>
                                 </div>
                             </li>
 

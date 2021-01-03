@@ -22,6 +22,12 @@ namespace Web_Music.BUS
             return data.GetTable(sql);
         }
 
+        public DataTable GetAllChiTietBaiHatRandom()
+        {
+            string sql = @"select * from Song left join Singer on Song.Singer_ID = Singer.ID left join Category on Song.Category_ID = Category.ID order by newid()";
+            return data.GetTable(sql);
+        }
+
         public void AddSong(string name, string lyric, string thumbnail, string source, int singer_id, int category_id)
         {
             string sql = @"insert into Song values(N'"+name+"',N'"+lyric+"','"+thumbnail+"','"
@@ -44,7 +50,7 @@ namespace Web_Music.BUS
 
         public DataTable FindSongByName(string name)
         {
-            string sql = @"select * from Song where Name like '%" + name + "%'";
+            string sql = @"select * from Song left join Singer on Song.Singer_ID = Singer.ID left join Category on Song.Category_ID = Category.ID where Song.Name like N'%" + name + "%'";
             return data.GetTable(sql);
         }
 
@@ -57,6 +63,12 @@ namespace Web_Music.BUS
         public DataTable GetSongNotExistInAlbum(int album_id)
         {
             string sql = @"select * from Song inner join (select ID from Song except select Song_ID from Song_Album where Album_ID = " + album_id+") as ans on Song.ID = ans.ID" ;
+            return data.GetTable(sql);
+        }
+
+        public DataTable GetSongByCategoryId(int category_id)
+        {
+            string sql = @"select * from Song where Category_ID = "+category_id;
             return data.GetTable(sql);
         }
     }
