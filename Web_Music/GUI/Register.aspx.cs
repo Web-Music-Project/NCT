@@ -26,7 +26,7 @@ namespace Web_Music.GUI
             {
                 if (!bus_TaiKhoan.CheckExistUsername(txtusername.Text))
                 {
-                    bus_TaiKhoan.AddAccountForUser(txtusername.Text, txtpass.Text, "user");
+                    bus_TaiKhoan.InsertAccountForUser(txtusername.Text, txtpass.Text, "user");
                     Response.Redirect("Login.aspx");
                 }
                 else

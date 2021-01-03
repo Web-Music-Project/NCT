@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/MasterPage.Master" AutoEventWireup="true" CodeBehind="User-Form.aspx.cs" Inherits="Web_Music.GUI.User_Form" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/MasterPage.Master" AutoEventWireup="true" CodeBehind="User_Form.aspx.cs" Inherits="Web_Music.GUI.User_Form" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
     User-Form
 </asp:Content>
@@ -86,31 +86,31 @@
                 <div>
                     <div class="input">
                         <%--/// bắn session username vào --%>
-                     <asp:TextBox ID="txtusername" runat="server" ></asp:TextBox>
+                     <asp:TextBox ID="txtUsername" runat="server" ></asp:TextBox>
                     </div>
                     <div class="input">
-                        <asp:TextBox ID="txtpass" runat="server" placeholder="Mật khẩu cũ" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtOldPass" runat="server" placeholder="Mật khẩu cũ" TextMode="Password"></asp:TextBox>
                     </div>
                      <div class="input">
-                        <asp:TextBox ID="TextBox1" runat="server" placeholder="Mật khẩu mới" TextMode="Password" CssClass="view"></asp:TextBox>
+                        <asp:TextBox ID="txtNewPass" runat="server" placeholder="Mật khẩu mới" TextMode="Password" CssClass="view"></asp:TextBox>
                          <a href="#" class="view1" ><i class="fa fa-eye" aria-hidden="true" id="view1"></i></a>
 
                     </div>
                      <div class="input">
-                        <asp:TextBox ID="txtpassnew1" runat="server" placeholder="Xác nhận mật khẩu mới" TextMode="Password"  CssClass="view2"></asp:TextBox>
+                        <asp:TextBox ID="txtConfirmNewPass" runat="server" placeholder="Xác nhận mật khẩu mới" TextMode="Password"  CssClass="view2"></asp:TextBox>
                          <a href="#" class="view3"><i class="fa fa-eye" aria-hidden="true" id="view3"></i></a>
 
                     </div>
                         <asp:Label Text="" runat="server" ID="msg"/>
                 </div>
                 <div>
-                    <asp:Button Text="Đổi Mật Khẩu" runat="server" id="dang_nhap" type="submit" />
+                    <asp:Button Text="Đổi Mật Khẩu" runat="server" id="dang_nhap" type="submit" OnClick="SuaMatKhau_Click"/>
                 </div>         
             </div>
         </div>
     </div>
 
-    <script>
+    <%--<script>
         var view1 = document.getElementById('view1');
         console.log(view1);
         view1.addEventListener('click', function (event) {
@@ -134,5 +134,5 @@
                 view2.type = "password";
             }
         });
-    </script>
+    </script>--%>
 </asp:Content>

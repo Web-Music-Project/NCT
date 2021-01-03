@@ -116,7 +116,7 @@
     <Content Include="GUI\src\js\helpers\smartresize.js" />
     <Content Include="GUI\Style\ChiTietBaiHat.css" />
     <Content Include="GUI\Style\MasterPage_style.css" />
-    <Content Include="GUI\User-Form.aspx" />
+    <Content Include="GUI\User_Form.aspx" />
     <Content Include="Image\Cover_vuong\Can_Mot_Khong_Hai.jpg" />
     <Content Include="Image\Cover_vuong\Dinh_Duyen.jpg" />
     <Content Include="Image\Cover_vuong\Ket_Thuc_Bat_Ngo.jpg" />
@@ -4024,12 +4024,12 @@
     <Compile Include="GUI\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\User-Form.aspx.cs">
-      <DependentUpon>User-Form.aspx</DependentUpon>
+    <Compile Include="GUI\User_Form.aspx.cs">
+      <DependentUpon>User_Form.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\User-Form.aspx.designer.cs">
-      <DependentUpon>User-Form.aspx</DependentUpon>
+    <Compile Include="GUI\User_Form.aspx.designer.cs">
+      <DependentUpon>User_Form.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
