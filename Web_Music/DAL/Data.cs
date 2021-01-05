@@ -11,7 +11,7 @@ namespace Web_Music.DAL
     {
         public SqlConnection GetConnect()
         {
-            string string_con = @"Data Source=DESKTOP-HVCCGCF\SQLEXPRESS;Initial Catalog=Music_account;Integrated Security=True";
+            string string_con = @"Data Source=DESKTOP-4FFKOTI\SQLEXPRESS;Initial Catalog=Music_account;Integrated Security=True";
             SqlConnection conn = new SqlConnection(string_con);
             return conn;
         }

@@ -26,7 +26,7 @@ namespace Web_Music.BUS
             }
             return role.Trim();
         }
-        public void AddAccountForUser(string username, string password, string role)
+        public void InsertAccountForUser(string username, string password, string role)
         {
                 string sql = @"insert into Account values('" + username + "','" + password + "','" + role + "')";
                 data.ExcuteNonQuerry(sql);
@@ -50,7 +50,7 @@ namespace Web_Music.BUS
             String sql = "select * from Account";
             return data.GetTable(sql);
         }
-        public DataTable getUserById(int id)
+        public DataTable GetAccountById(int id)
         {
             string sql = "select * from Account where id = '" + id + "'";
             return data.GetTable(sql);

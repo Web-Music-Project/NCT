@@ -24,7 +24,7 @@ namespace Web_Music.GUI.Admin
         {
             int id = Convert.ToInt16(Session["id"]);
             DataTable dt = new DataTable();
-            dt = bus.getUserById(id);
+            dt = bus.GetAccountById(id);
             txttaikhoan.Text = dt.Rows[0]["Username"].ToString();
             txtmatkhau.Text = dt.Rows[0]["Password"].ToString();
             ddl_role.SelectedValue = dt.Rows[0]["Role"].ToString();

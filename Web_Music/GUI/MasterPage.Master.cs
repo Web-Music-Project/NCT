@@ -12,7 +12,7 @@ namespace Web_Music.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void Search_ServerClick(object sender, EventArgs e)
@@ -39,6 +39,18 @@ namespace Web_Music.GUI
             else
             {
                 Response.Redirect("BaiHatYeuThich.aspx");
+            }
+        }
+
+        protected void user_form_ServerClick(object sender, EventArgs e)
+        {
+            if(Convert.ToInt16(Session["login_id"]) == 0)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                Response.Redirect("User_Form.aspx");
             }
         }
     }

@@ -80,7 +80,7 @@
 					</div>
 				</div>
 				<div id="latest">
-					<h3><a href="#">Mới phát hành</a></h3>
+					<h3><a href="#"><% =dt2.Rows[0]["Name1"].ToString() %></a></h3>
 					<div class="album-list">
 
 
@@ -109,7 +109,7 @@
 					
 					</div>
 				</div>
-				<div id="mv-hot">
+				<%--<div id="mv-hot">
 					<h3><a href="#">MV Hot</a></h3>
 					<div id="mv-hot-list">
 						<div class="mv-hot-item">
@@ -213,11 +213,35 @@
 							<p><a href="#">Issac</a></p>
 						</div>
 					</div>
-				</div>	
+				</div>	--%>
 				<div id="songs">
-					<h3><a href="#">Bài Hát</a></h3>
+					<h3><a href="#">Bài hát ngẫu nhiên</a></h3>
 					<div class="container">
+
+						<% for (int i = 0; i < 10; i++)
+                            { %>
+								
 						<div class="item">
+							<div class="item1">
+									<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt7.Rows[i]["ID"] %>"><img src="../../Image/Cover_vuong/<% =dt7.Rows[i]["Thumbnail"].ToString() %>" alt="" width="60px" height="60px" style="object-fit:cover"></a>
+							</div>	
+							<div class="item2">
+									<a href="ChiTietBaiHat.aspx?Song_ID=<% =dt7.Rows[i]["ID"] %>">
+										<span><% =dt7.Rows[i]["Name"].ToString() %></span>
+									</a>
+							</div>	
+							<div class="item3">
+									<a href="ChiTietCaSy.aspx?Singer_ID=<% =dt7.Rows[i]["Singer_ID"] %>">
+										<span><% =dt7.Rows[i]["Name1"].ToString() %></span>
+									</a>
+							</div>	
+							<div class="views">
+								<p><% =dt7.Rows[i]["Views"].ToString() %></p>
+								
+							</div>
+						</div>
+						<%} %>
+						<%--<div class="item">
 							<div class="item1">
 									<a href="#"><img src="https://avatar-ex-swe.nixcdn.com/song/2020/11/24/6/8/8/a/1606199992060.jpg" alt="" width="60px" height="60px"></a>
 							</div>	
@@ -398,6 +422,26 @@
 								
 							</div>
 						</div>
+
+						<div class="item">
+							<div class="item1">
+									<a href="#"><img src="https://avatar-ex-swe.nixcdn.com/song/2020/11/24/6/8/8/a/1606199992060.jpg" alt="" width="60px" height="60px"></a>
+							</div>	
+							<div class="item2">
+									<a href="#">
+										<span>Yêu Vội Vàng</span>
+									</a>
+							</div>	
+							<div class="item3">
+									<a href="#">
+										<span>Trung Quân</span>
+									</a>
+							</div>	
+							<div class="views">
+								<p><i class="fas fa-headphones-alt"></i></p>
+								
+							</div>
+						</div>--%>
 					</div>
 				</div>		
 		</div>
