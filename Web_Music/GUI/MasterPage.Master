@@ -34,7 +34,7 @@
 			<ul>
 				<li><a href="#">Bài Hát</a></li>
 				<li style="position:relative;" id="drop-dowmn" >
-                    <a href="#" >Album</a>
+                    <a href="#">Chủ đề</a>
                     <div id="test99">
                         <div id="sub">
                          <div>
@@ -72,9 +72,9 @@
                    </div>
 				</li>
 				<li><a href="#">Tuyển Tập</a></li>
-				<li><a href="#">Video</a></li>
+				<%--<li><a href="#">Video</a></li>--%>
 				<li><a href="#">BXH</a></li>
-				<li><a href="#">Chủ Đề</a></li>
+				<%--<li><a href="#">Chủ Đề</a></li>--%>
 				<li><a href="#">Top</a></li>
 			</ul>
 			</div>
